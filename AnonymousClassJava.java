@@ -7,7 +7,7 @@ abstract
         public 
             Anonymous(){
                 System.out.println("construct of abstract class Anonymous");
-    }
+        }
 
 }
 
@@ -89,7 +89,7 @@ public
                         System.out.println(" function in anonymous ");
                         System.out.println("static variable  = "  + staticVariable);
                         System.out.println("instance variable = " + instanceVariable);
-                    }
+                }
 
             }.function();
 
