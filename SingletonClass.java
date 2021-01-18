@@ -14,10 +14,10 @@ class Singleton{
     static 
         Singleton getInstance(String instanceVariable){
 
-        if (singleObject == null){
-            singleObject = new Singleton(instanceVariable);
-        }
-        return singleObject;
+            if (singleObject == null){
+                singleObject = new Singleton(instanceVariable);
+            }
+            return singleObject;
     }
 
     public 
