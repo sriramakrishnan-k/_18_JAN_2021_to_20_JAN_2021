@@ -43,7 +43,7 @@ public
 
                 System.out.println(obj1.getInstanceVariable());
                 obj2.setInstanceVariable("instanceVariable - obj2");
-                System.out.println(obj2.getInstanceVariable());
+                System.out.println(obj1.getInstanceVariable());
                 
                 System.out.println(obj1.hashCode() == obj2.hashCode());
 
