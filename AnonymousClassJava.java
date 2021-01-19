@@ -65,8 +65,9 @@ public
             // hence to create a anonymous class it is better to use Object class name
             new Object(){
                 
+                // final value are allowed ( only constant )
                 static final 
-                    int staticVariable = 200; // final value are allowed (if static it is a static field)
+                    int staticVariable = 200;
                 
                 int instanceVariable = 101;
 
@@ -79,28 +80,50 @@ public
                 }
 
                 /* 
-                static initializer block is not allowed in anonymous class 
-                construct is not allow
-                but instance initializer block is allowed
+                    static initializer block is not allowed in anonymous class 
+                    static methods are not allowed
+                    constructor is not allowed
+                    but instance initializer block is allowed
                 */
 
+                // function which calls remaining fuctions 
                 public 
                     void function(){
                         System.out.println(" function in anonymous ");
                         System.out.println("static variable  = "  + staticVariable);
                         System.out.println("instance variable = " + instanceVariable);
+                        this.additionalMethod();
+                        this.extraMethod();
+                }
+
+                public 
+                    void additionalMethod(){
+                        System.out.println("Additional method in anonymous class");
+                }
+
+                public 
+                    void extraMethod(){
+                        System.out.println("Extra method in anonymous class");
                 }
 
             }.function();
 
+            // use one function to call remaining methods.
+
             /* if we try to store the object of anonymous class in Object type variables
                 like
                     Object obj = new Object(){
-                                                static fields,
-                                                static methods,
+                                                static fields(constants only),
+
+                                                ********************************
+                                                  static methods (not allowed),   
+                                                  constructor    (not allowed)       
+                                                ********************************
+
                                                 instance attributes,
                                                 instance methods,
                                                 overrided methods
+
                                              };
 
                     * we can access the overrided methods using obj *
